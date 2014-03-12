@@ -108,9 +108,6 @@ fi
 #basic
 alias vi='vim'
 alias pf='ps -ef '
-alias mydb='mysql -uroot -pfenzi0901'
-alias db='mysql -hrdsqefu7fnj6nib.mysql.rds.aliyuncs.com -ureader -pmy4321reader xiaoqinproduct'
-alias dumptable='mysqldump  -hrdsqefu7fnj6nib.mysql.rds.aliyuncs.com -ureader -pmy4321reader xiaoqinproduct'
 
 #hadoop
 alias starthadoop='sudo service hadoop-yarn-resourcemanager start;sudo service hadoop-yarn-nodemanager start;sudo service hadoop-mapreduce-historyserver start;'
