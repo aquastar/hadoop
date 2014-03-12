@@ -105,4 +105,20 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-alias sget='sudo apt-get install '
+#basic
+alias vi='vim'
+alias pf='ps -ef '
+alias mydb='mysql -uroot -pfenzi0901'
+alias db='mysql -hrdsqefu7fnj6nib.mysql.rds.aliyuncs.com -ureader -pmy4321reader xiaoqinproduct'
+alias dumptable='mysqldump  -hrdsqefu7fnj6nib.mysql.rds.aliyuncs.com -ureader -pmy4321reader xiaoqinproduct'
+
+#hadoop
+alias starthadoop='sudo service hadoop-yarn-resourcemanager start;sudo service hadoop-yarn-nodemanager start;sudo service hadoop-mapreduce-historyserver start;'
+alias stophadoop='sudo service hadoop-yarn-resourcemanager stop;sudo service hadoop-yarn-nodemanager stop;sudo service hadoop-mapreduce-historyserver stop;'
+alias fnn='sudo -u hdfs hdfs namenode -format'
+alias clhd='sudo rm -rf /tmp/*;sudo rm -rf /var/lib/hadoop-hdfs/cache/*;sudo rm -rf /var/lib/hadoop-yarn/cache/*;sudo rm -rf /var/lib/hadoop-mapreduce/cache/*'
+alias hls='sudo -u hdfs hadoop fs -ls -R /'
+
+#hive
+alias stophive='sudo service hive-metastore stop;sudo service hive-server stop'
+alias starthive='sudo service hive-metastore start;sudo service hive-server start'
