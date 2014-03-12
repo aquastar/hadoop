@@ -16,8 +16,10 @@ sudo apt-get install oracle-java7-installer
 echo "***************************\n"
 echo "** setting Java in env   **\n"
 echo "***************************\n"
+sudo chmod 777 /etc/profile
 sudo echo "export JAVA_HOME=\"/usr/lib/jvm/java-7-oracle/\"" >> /etc/profile
 sudo echo "export JRE_HOME=$""JAVA_HOME/jre" >> /etc/profile  
 sudo echo "export CLASSPATH=.:$""JAVA_HOME/lib:$""JRE_HOME/lib" >> /etc/profile  
 sudo echo "export PATH=$""JAVA_HOME/bin:$""PATH" >> /etc/profile
 source /etc/profile
+sudo chmod 644 /etc/profile

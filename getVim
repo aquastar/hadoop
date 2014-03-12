@@ -1,4 +1,5 @@
 sudo apt-get install vim gcc g++ make
+sleep 2
 wget http://prdownloads.sourceforge.net/ctags/ctags-5.6.tar.gz
 tar xzvf ctags-5.6.tar.gz
 cd ctags-5.6
