@@ -10,4 +10,10 @@ cd ..
 rm ctags-5.6.tar.gz
 rm -rf ctags-5.6/
 git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sudo chmod 777 ~/.vim_runtime/vimrcs/basic.vim
+echo 'set nu' >> ~/.vim_runtime/vimrcs/basic.vim
+chmod 644 ~/.vim_runtime/vimrcs/basic.vim
 sh ~/.vim_runtime/install_awesome_vimrc.sh
+sudo chmod 777 /etc/profile
+echo 'export TERM=xterm-color' >> /etc/profile
+sudo chmod 644 /etc/profile
