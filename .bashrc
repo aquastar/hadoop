@@ -108,14 +108,21 @@ fi
 #basic
 alias vi='vim'
 alias pf='ps -ef '
+alias mydb='mysql -uroot -p'
 
 #hadoop
-alias starthadoop='sudo service hadoop-yarn-resourcemanager start;sudo service hadoop-yarn-nodemanager start;sudo service hadoop-mapreduce-historyserver start;'
-alias stophadoop='sudo service hadoop-yarn-resourcemanager stop;sudo service hadoop-yarn-nodemanager stop;sudo service hadoop-mapreduce-historyserver stop;'
+alias starthadoop='sudo service hadoop-yarn-resourcemanager start;sudo service hadoop-yarn-nodemanager start;sudo service hadoop-mapreduce-historyserver start;sudo service hadoop-hdfs-      namenode start;sudo service hadoop-hdfs-datanode start;sudo service hadoop-hdfs-secondarynamenode start'
+alias stophadoop='sudo service hadoop-yarn-resourcemanager stop;sudo service hadoop-yarn-nodemanager stop;sudo service hadoop-mapreduce-historyserver stop;sudo service hadoop-hdfs-namenode  stop;sudo service hadoop-hdfs-datanode stop;sudo service hadoop-hdfs-secondarynamenode stop'
+
 alias fnn='sudo -u hdfs hdfs namenode -format'
 alias clhd='sudo rm -rf /tmp/*;sudo rm -rf /var/lib/hadoop-hdfs/cache/*;sudo rm -rf /var/lib/hadoop-yarn/cache/*;sudo rm -rf /var/lib/hadoop-mapreduce/cache/*'
 alias hls='sudo -u hdfs hadoop fs -ls -R /'
+alias fnew='sudo -u hdfs hadoop fs -rm -r /tmp && sudo -u hdfs hadoop fs -mkdir /tmp  && sudo -u hdfs hadoop fs -chmod -R 1777 /tmp && sudo -u hdfs hadoop fs -mkdir /tmp/hadoop-yarn/        staging && sudo -u hdfs hadoop fs -chmod -R 1777 /tmp/hadoop-yarn/staging && sudo -u hdfs hadoop fs -mkdir /tmp/hadoop-yarn/staging/history/done_intermediate  && sudo -u hdfs hadoop fs -    chmod -R 1777 /tmp/hadoop-yarn/staging/history/done_intermediate && sudo -u hdfs hadoop fs -chown -R mapred:mapred /tmp/hadoop-yarn/staging && sudo -u hdfs hadoop fs -mkdir /var/log/hadoop- yarn && sudo -u hdfs hadoop fs -chown yarn:mapred /var/log/hadoop-yarn && sudo -u hdfs hadoop fs -mkdir /user/danny && sudo -u hdfs hadoop fs -chown danny /user/danny'
 
 #hive
 alias stophive='sudo service hive-metastore stop;sudo service hive-server stop'
 alias starthive='sudo service hive-metastore start;sudo service hive-server start'
+
+#git
+alias gup='git add *; git commit -m "update"; git push -u origin master '
+alias gdown='git pull'
